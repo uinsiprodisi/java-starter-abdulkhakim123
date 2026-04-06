@@ -1,22 +1,61 @@
-import java.util.Scanner;
+class AyamGoreng {
+
+    private String ayam;
+    private int tepung;
+    private int minyak;
+
+    public void setAyam(String ayam) {
+        this.ayam = ayam;
+    }
+
+    public String getAyam() {
+        return ayam;
+    }
+
+    public void setTepung(int tepung) {
+        this.tepung = tepung;
+    }
+
+    public int getTepung() {
+        return tepung;
+    }
+
+    public void setMinyak(int minyakBaru) {
+        if (minyakBaru >= 6) {
+            this.minyak = minyakBaru;
+        } else {
+            System.out.println("Error: Jumlah minyak tidak boleh negatif!");
+        }
+    }
+
+    public int getMinyak() {
+        return minyak;
+    }
+}
 
 public class App {
-    public static void main(String[] args) throws Exception {
-        Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {
 
-        System.out.print("Masukkan nama: ");
-        String nama = input.nextLine();
+        AyamGoreng pesananSatu = new AyamGoreng();
+        pesananSatu.setAyam("Paha Bawah");
+        pesananSatu.setTepung(2);
+        pesananSatu.setMinyak(500);
 
-        System.out.print("Masukkan nim: ");
-        String nim5tr = input.nextLine();
-        int nim = Integer.parseInt(nim5tr);
+        AyamGoreng pesananDua = new AyamGoreng();
+        pesananDua.setAyam("Dada");
+        pesananDua.setTepung(3);
+        pesananDua.setMinyak(100);
 
-        System.out.print("Masukkan prodi: ");
-        String prodi = input.nextLine();
+        System.out.println("--- Pesanan 1 ---");
+        System.out.println("Bagian Ayam: " + pesananSatu.getAyam());
+        System.out.println("Jumlah Tepung: " + pesananSatu.getTepung() + " gram");
+        System.out.println("Jumlah Minyak: " + pesananSatu.getMinyak() + " ml");
 
-        System.out.print("Alasan Belajar Java: ");
-        String alasan = input.nextLine();
+        System.out.println();
 
-        System.out.print("Halo " + nama + ", dengan NIM" + nim + " Selamat belajar JAVA");
+        System.out.println("--- Pesanan 2 ---");
+        System.out.println("Bagian Ayam: " + pesananDua.getAyam());
+        System.out.println("Jumlah Tepung: " + pesananDua.getTepung() + " gram");
+        System.out.println("Jumlah Minyak: " + pesananDua.getMinyak() + " ml");
     }
 }
